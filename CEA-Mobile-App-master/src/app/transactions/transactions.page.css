@@ -1,0 +1,39 @@
+.each-transaction{
+    margin-top:10px;
+    margin-bottom:10px;
+    display: flex;
+    padding-top:5px;
+    padding-bottom: 5px;
+    flex-direction: row;
+    background: whitesmoke;
+    justify-content: space-between;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+    justify-content: space-around;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    justify-content: space-around;
+}
+.id-text , .money-text{
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+}
+.time-text , .closing-text{
+    color: gray;
+    font-weight: 100;
+    font-size: 10px;
+}
+.add-money{
+    color:green;
+}
+.subtract-money{
+    color: red
+}
+

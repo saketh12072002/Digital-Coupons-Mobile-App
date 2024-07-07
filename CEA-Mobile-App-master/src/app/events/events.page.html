@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Events</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!this.loading">
+  <ion-list>
+    <!-- <div *ngFor = "let event of events">
+      <ion-label>{{event.id}}</ion-label>
+    </div> -->
+    <ion-item *ngFor="let event of events" [hidden]="this.blackList.includes(event)">
+      <ion-label>{{event}}</ion-label>
+      <ion-button slot="end" [routerLink]="redirectTo(event)" color="danger">
+        <ion-icon name="arrow-forward">
+
+        </ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

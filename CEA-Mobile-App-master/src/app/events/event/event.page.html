@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{this.event}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!this.loading">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Introduction</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="this.eventDetails.introduction">
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Problem Statement</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="this.eventDetails.ps"> </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Rules</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="this.eventDetails.rules"> </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Contact Us</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card *ngFor="let per of this.eventDetails.contacts" mode="md">
+        <ion-card-header>
+          <ion-card-title *ngIf="per.name" style="font-size: 18px;">{{per.name}}</ion-card-title>
+          <ion-card-subtitle>
+              <ion-item *ngIf="per.email">
+                <ion-label style="font-size:14.5px;">email: <a href="mailto:{{per.email}}" style="text-decoration: none;">{{per.email}}</a></ion-label>
+              </ion-item>
+              <ion-item *ngIf="per.mobile">
+                  <ion-label style="font-size:14.5px;">phone: <a href="tel:{{per.mobile}}" style="text-decoration: none;">{{per.mobile}}</a></ion-label>
+                </ion-item>  
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

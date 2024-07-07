@@ -1,0 +1,76 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+
+          <ion-menu-toggle auto-hide="flase" *ngIf="isFinCore()">
+            <ion-item [routerDirection]="'root'" routerLink="departments">
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                Departments
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="flase" *ngIf="isCore()">
+            <ion-item [routerDirection]="'root'" [routerLink]="'departments/'+user.dept">
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                {{depts[user.dept]}} Team
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="flase" *ngIf="isCore() || isCoord() || isDC()">
+            <ion-item [routerDirection]="'root'" routerLink="digital-coupons">
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                Digital Coupons
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="flase" *ngIf="isCore() || isCoord() || isDC()">
+            <ion-item [routerDirection]="'root'" routerLink="transactions">
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                Transactions
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="flase" *ngIf="isCore() || isCoord() || isDC()">
+            <ion-item >
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                Balance:{{user.balance}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="flase" *ngIf="isCore() || isCoord() || isDC()">
+            <ion-item (click)="logout()">
+              <ion-icon slot="start" name="construct"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of AnonymousRoutes">
+            <ion-item [routerDirection]="'root'" *ngIf="!isLoggedIn()" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{ p.title }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
+          
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

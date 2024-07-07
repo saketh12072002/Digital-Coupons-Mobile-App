@@ -1,0 +1,7 @@
+{
+  "name": "CEA Mobile App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

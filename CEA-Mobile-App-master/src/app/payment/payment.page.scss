@@ -1,0 +1,77 @@
+ion-icon{
+    font-size: 20px;
+    margin-left: 8px;
+}
+.container{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.amount{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2.5em;
+}
+.error{
+    margin-top: 10px;
+    color:crimson;
+    font-size: x-small;
+}
+.balance{
+    margin-top:2.75em;
+}
+.balance h6{
+    font-size: 16px;
+}
+.amount input{
+    font-weight:bolder;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: black;
+    display: block;
+    width: 95%;
+    height: 42px;
+    padding: 0 30px 0 16px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid rgb(70, 187, 242);
+    caret-color:rgb(70, 187, 242);
+}
+.amount input:not(:placeholder-shown)+span{
+    color: black;
+}
+.amount span{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    position: absolute;
+    font-size: 1.5em;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    padding-left: 6px;
+    pointer-events: none;
+    color: #dae4e8;
+    -webkit-box-align: center;
+    align-items: center;
+}
+::placeholder{
+    color: #dae4e8;
+}
+ion-button{
+    letter-spacing: 0.1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+    font-weight: bolder;
+    --background:rgb(8, 187, 241);
+    --background-activated:rgb(2, 182, 236);
+    --background-focused:rgb(2, 182, 236);
+    --background-hover:rgb(2, 182, 236);
+    height: 56px!important;
+}
+ion-footer{
+  ion-button{
+    margin: 0 !important;
+  }
+}

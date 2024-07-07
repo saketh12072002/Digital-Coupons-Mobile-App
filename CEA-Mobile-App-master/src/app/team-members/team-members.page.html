@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{this.depts[this.dept]}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!this.loading">
+  <!-- <ion-label>{{core.name}}</ion-label> -->
+  <ion-card *ngFor="let core of cores">
+    <ion-card-header>
+      <ion-card-title>
+        {{core.name | lowercase}}
+        <ion-badge color="primary">Core</ion-badge>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <h4>{{core.email}}</h4>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <br /><br />
+  <ion-card *ngFor="let coord of coords">
+    <ion-card-header>
+      <ion-card-title>
+        {{coord.name | lowercase}}
+        <ion-badge color="secondary">Coord</ion-badge>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <h4>{{coord.email}}</h4>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <br /><br />
+  <ion-card *ngFor="let vol of depCoprds">
+    <ion-card-header>
+      <ion-card-title>
+        {{vol.name | lowercase}}
+        <ion-badge color="tertiary">Deputy Coord</ion-badge>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <h4>{{vol.email}}</h4>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

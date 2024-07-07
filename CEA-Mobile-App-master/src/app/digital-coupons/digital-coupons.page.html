@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Digital Coupons</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div style="margin-top: 6em">
+    <ion-button mode="ios" expand="block" color="primary" (click)="scanQR()" style="margin: 0;">Scan</ion-button>
+  <ion-button mode="ios" expand="block" color="dark" (click)="open_enter_id()" style="margin: 0;margin-top:16px">Pay your friend</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" style="margin: 0;" (click) = "logout()" color="danger">Logout</ion-button>
+</ion-footer>

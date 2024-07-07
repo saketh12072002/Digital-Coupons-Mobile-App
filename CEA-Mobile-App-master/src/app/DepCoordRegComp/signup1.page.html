@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>New Deputy Coord</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="margin-top: 36px;">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type='text'[(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Roll Number</ion-label>
+        <ion-input type='text' [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Mobile</ion-label>
+        <ion-input type='text' [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type='text'[(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Team</ion-label>
+        <ion-select #newSelect [(ngModel)]="team">
+        <ion-select-option value="dsr">Outreach & Accomodation</ion-select-option>
+        <ion-select-option value="finance">Finance</ion-select-option>
+        <ion-select-option value="spons">Sponsorship & PR</ion-select-option>
+        <!-- <ion-select-option value="webops">Webops</ion-select-option> -->
+        <ion-select-option value="nirmaan">Nirmaan</ion-select-option>
+        <ion-select-option value="events">Events</ion-select-option>
+        <ion-select-option value="mad">Design & Creatives</ion-select-option>
+        <ion-select-option value="fr">Facilities & Requirements</ion-select-option>
+      </ion-select>     
+      </ion-item> 
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type='password' [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type='password' [(ngModel)]="cpassword"></ion-input>   
+      </ion-item>
+    </ion-list>
+  <ion-button color='tertiary' (click)="register()" expand="full" style="margin: 0;">Register</ion-button>
+</ion-content>

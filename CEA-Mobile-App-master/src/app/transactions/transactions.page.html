@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list *ngFor="let transaction of transactions">
+    <div (click)="gotohome()" class="each-transaction">
+      <div class="details">
+          <div class="user-id">
+            <p class="id-text">{{getname(transaction,transaction.from_uid)}}</p>
+          </div>
+          <div class="time">
+              <p class="time-text">{{getdate(transaction.timestamp)}}</p>
+          </div>
+      </div>
+      <div class="amount">
+          <div class="money">
+            <p class="money-text {{getclass(transaction.from_uid)}}">{{getsign(transaction.from_uid)}}Rs{{transaction.amount}}</p>
+          </div>
+
+      </div>
+    </div>
+  </ion-list>
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

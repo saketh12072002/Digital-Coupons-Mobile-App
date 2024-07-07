@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" style="margin-top: 24px;">
+    <h2><strong>{{paymentService.vendor_name}}</strong></h2>
+    <div class="amount">
+      <input placeholder="Amount" type="number" [(ngModel)]="amount" (keydown)="verifyAmount($event)">
+      <span class="symbol">₹</span>
+    </div>
+    <div *ngIf="amountrequired" class="error amount">
+      <div style="width: 95%;">Please enter amount</div>
+    </div>
+    <div class="balance">
+      <h6><strong>Available balance</strong></h6>
+      <span >₹{{user.balance}}</span>
+      <!-- <span *ngIf="amount_is_loading">Loading...</span> -->
+    </div>
+    
+  </div>
+</ion-content>
+<ion-footer no-border>
+  <ion-button expand="full" (click)="send_money()" mode="ios">Pay<span *ngIf="amount">&nbsp;₹&nbsp;{{amount}}</span></ion-button>
+
+  
+</ion-footer>
+
